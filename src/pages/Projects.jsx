@@ -104,14 +104,14 @@ const Projects = () => {
                 >
                   View Code
                 </a>
-                <a
+                {/* <a
                   href={selectedProject.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2 bg-green-600 text-white font-bold rounded-lg hover:bg-green-500 transition duration-300"
                 >
                   View Live App
-                </a>
+                </a> */}
               </div>
             </div>
           </motion.div>
