@@ -12,7 +12,7 @@ const Navbar = () => {
           {/* Logo */}
           <div>
             <Link to="/" className="text-3xl font-extrabold hover:text-yellow-300 text-white">
-              MyPortfolio
+              Portfolio
             </Link>
           </div>
           
