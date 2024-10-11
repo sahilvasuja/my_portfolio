@@ -35,11 +35,11 @@ const Projects = () => {
         </div>
 
         {/* Project Cards */}
-        <div className="justify-center items-center flex  md:flex-row flex-col  gap-8">
+        <div className="justify-center items-center flex  md:flex-row flex-col gap-8">
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="transform transition-transform duration-300 hover:scale-105 md:w-1/3 w-full  hover:shadow-lg bg-white rounded-lg overflow-hidden"
+              className="transform transition-transform duration-300 hover:scale-105 md:w-1/3 w-full hover:shadow-lg bg-white rounded-lg overflow-hidden"
               onClick={() => handleOpenModal(project)}
             >
               <ProjectCards project={project} />
@@ -104,14 +104,14 @@ const Projects = () => {
                 >
                   View Code
                 </a>
-                {/* <a
+                <a
                   href={selectedProject.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2 bg-green-600 text-white font-bold rounded-lg hover:bg-green-500 transition duration-300"
                 >
                   View Live App
-                </a> */}
+                </a>
               </div>
             </div>
           </motion.div>

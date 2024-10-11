@@ -9,3 +9,11 @@
     font-weight: normal;
     font-style: normal;
   } */
+
+  .rounded-image {
+    width: 100px; /* Set your desired width */
+    height: 100px; /* Set your desired height */
+    border-radius: 50%; /* This will make the image round */
+    object-fit: cover; /* This ensures the image covers the entire area */
+  }
+  
