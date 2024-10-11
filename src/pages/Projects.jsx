@@ -35,11 +35,11 @@ const Projects = () => {
         </div>
 
         {/* Project Cards */}
-        <div className="justify-center items-center flex  gap-8">
+        <div className="justify-center items-center flex  md:flex-row flex-col  gap-8">
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="transform transition-transform duration-300 hover:scale-105 w-1/3 hover:shadow-lg bg-white rounded-lg overflow-hidden"
+              className="transform transition-transform duration-300 hover:scale-105 md:w-1/3 w-full  hover:shadow-lg bg-white rounded-lg overflow-hidden"
               onClick={() => handleOpenModal(project)}
             >
               <ProjectCards project={project} />

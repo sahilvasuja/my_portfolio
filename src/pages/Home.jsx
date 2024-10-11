@@ -6,7 +6,7 @@ import Skills from './Skills';
 import Experience from './Experience';
 import Projects from './Projects';
 import Contact from './Contact';
-
+import SahilVasuja_Resume from '../assets/SahilVasuja_Resume.pdf'
 const textVariant = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -26,14 +26,22 @@ const imageVariant = {
 };
 
 const buttonVariant = {
-  hover: { scale: 1.1, boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)', transition: { yoyo: Infinity } },
+  hover: { scale: 1.1, transition: { yoyo: Infinity } },
 };
 
 const Home = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = SahilVasuja_Resume; 
+    link.download = "SahilVasuja_Resume"; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <div className='h-screen bg-gray-100'>
-      <section className="flex items-center justify-center pt-32 px-6 md:px-12">
-        <div className="container max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
+      <section className="flex items-center  bg-gray-100 justify-center pt-32 px-6 md:px-12">
+        <div className="container max-w-7xl  mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
           
           {/* Text Section with Framer Motion */}
           <motion.div
@@ -57,13 +65,20 @@ const Home = () => {
     </a>
   </motion.div>
   <motion.div variants={buttonVariant} whileHover="hover">
-    <Link
-      to="/path/to/resume.pdf" // Update this path to your resume file
+  <button
+      onClick={handleDownload}
+      className="px-8 py-4 bg-green-600 text-white font-bold rounded-full shadow-lg hover:bg-green-500 transition duration-300 ease-in-out"
+    >
+      Download Resume
+    </button>
+    {/* <Link
+     to='SahilVasuja_Resume.pdf' 
       className="inline-block px-8 py-4 bg-green-600 text-white font-bold rounded-full shadow-lg hover:bg-green-500 transition duration-300 ease-in-out"
-      target="_blank" // Opens the resume in a new tab
+      target="_blank" 
+      download={SahilVasuja_Resume.pdf}
     >
       Resume
-    </Link>
+    </Link> */}
   </motion.div>
 </motion.div>
 
@@ -91,11 +106,11 @@ const Home = () => {
           alt="Hero of Sahil Vasuja"
           className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-xl"
           animate={{
-            // scale: [1, 1.1, 1], // Scale up and down for flapping
+            //  scale: [1.2, 1.3, 1], // Scale up and down for flapping
             rotate: [1, 4, -4, 0], // Slight rotation for flapping effect
           }}
           transition={{
-            duration: 12, // Duration of the animation
+            duration: 10, // Duration of the animation
             ease: "easeInOut",
             repeat: Infinity, // Repeats the animation infinitely
           }}
